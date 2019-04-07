@@ -69,3 +69,11 @@ while i < len(list1):
         list2.append(list1[i])
     i+=1
 print(list2)
+
+a = [1,1,1,2,2,2,2,3,3,4]
+res = []
+for el in a:
+    if a.count(el) == 1:
+        res.append(el)
+
+
