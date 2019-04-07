@@ -60,20 +60,11 @@ print(list1)
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
 
-list1=[1, 2, 4, 5, 6, 2, 5, 2]
-list1=sorted(list1)
-list2=[]
-i=0
-while i < len(list1):
-    if list1[i] == list1[i+1]:
-        list2.append(list1[i])
-    i+=1
-print(list2)
-
-a = [1,1,1,2,2,2,2,3,3,4]
-res = []
-for el in a:
-    if a.count(el) == 1:
-        res.append(el)
+spisok1 = [1, 2, 4, 5, 6, 2, 5, 2]
+spisok2 = []
+for el in spisok1:
+    if spisok1.count(el) == 1:
+        spisok2.append(el)
+print(spisok2)        
 
 
