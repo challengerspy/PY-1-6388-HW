@@ -33,7 +33,6 @@ spisok1=['яблоко','банан','киви','арбуз']
 spisok2=['апельсин','лимон','киви','арбуз']
 spisok3=[]
 
-spisok3 = []
 for el1 in spisok1:
     if el1 in spisok2:
         continue
@@ -41,7 +40,7 @@ for el1 in spisok1:
         spisok3.append(el1)
 spisok1 = spisok3
 
-# alternative
+# на множествах
 mnoj = set(spisok1).difference(spisok2)
 
 print(spisok1)
