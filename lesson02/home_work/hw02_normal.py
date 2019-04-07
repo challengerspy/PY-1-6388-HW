@@ -5,17 +5,53 @@
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
 
+import math
+
+list=[2, -5, 8, 9, -25, 25, 4]
+print(list)
+new_list=[]
+x=0
+while x < len(list):
+    if int(list[x]) > 0 and len(str(math.sqrt(int(list[x])))) < 5:
+        new_list.append(int(math.sqrt(int(list[x]))))
+    x+=1
+print(new_list)
 
 # Задача-2: Дана дата в формате dd.mm.yyyy, например: 02.11.2013.
 # Ваша задача вывести дату в текстовом виде, например: второе ноября 2013 года.
 # Склонением пренебречь (2000 года, 2010 года)
 
+my_date='02.11.2000'
+print(my_date)
+newdate=''
+if my_date[0:2] == '02':
+    newdate=newdate+'второе '
+    # print(newdate)
+    if my_date[3:5]== '11':
+        newdate=newdate+'ноября '
+        # print(newdate)
+        if my_date[6:10] == '2013':
+            newdate=newdate+'2013 года'
+            print(newdate)
+        if my_date[6:10] == '2010':
+            newdate=newdate+'2010 года'
+            print(newdate)
+        if my_date[6:10] == '2000':
+            newdate=newdate+'2000 года'
+            print(newdate)
 
 # Задача-3: Напишите алгоритм, заполняющий список произвольными целыми числами
 # в диапазоне от -100 до 100. В списке должно быть n - элементов.
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
 
+import random
+
+n=20
+list1=[]
+for i in range(n):
+    list1.append(random.randint(-100,100))
+print(list1)
 
 # Задача-4: Дан список, заполненный произвольными целыми числами.
 # Получите новый список, элементами которого будут: 
@@ -23,3 +59,13 @@
 # например, lst = [1, 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 2, 4, 5, 6]
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
+
+list1=[1, 2, 4, 5, 6, 2, 5, 2]
+list1=sorted(list1)
+list2=[]
+i=0
+while i < len(list1):
+    if list1[i] == list1[i+1]:
+        list2.append(list1[i])
+    i+=1
+print(list2)
