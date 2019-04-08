@@ -27,8 +27,6 @@ while i < len (spisok):
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
 
-spisok1=list()
-spisok2=list()
 spisok1=['яблоко','банан','киви','арбуз']
 spisok2=['апельсин','лимон','киви','арбуз']
 spisok3=[]
@@ -39,8 +37,12 @@ for el1 in spisok1:
     else:
         spisok3.append(el1)
 spisok1 = spisok3
+print(spisok1)
 
 # на множествах
+spisok1=['яблоко','банан','киви','арбуз']
+spisok2=['апельсин','лимон','киви','арбуз']
+
 mnoj = set(spisok1).difference(spisok2)
 
 print(spisok1)
