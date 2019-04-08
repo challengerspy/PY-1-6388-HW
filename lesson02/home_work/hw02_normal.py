@@ -60,11 +60,19 @@ print(list1)
 # б) элементы исходного списка, которые не имеют повторений:
 # например, lst = [1 , 2, 4, 5, 6, 2, 5, 2], нужно получить lst2 = [1, 4, 6]
 
+# a
+spisok1 = [1, 2, 4, 5, 6, 2, 5, 2]
+mnoj = set(spisok1)
+spisok1=mnoj
+print(mnoj)
+print(spisok1)
+
+# b
 spisok1 = [1, 2, 4, 5, 6, 2, 5, 2]
 spisok2 = []
 for el in spisok1:
     if spisok1.count(el) == 1:
         spisok2.append(el)
-print(spisok2)        
+print(spisok2)    
 
 
