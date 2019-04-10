@@ -7,6 +7,17 @@
 def my_round(number, ndigits):
     pass
 
+def my_round(number, ndigits):
+    a=str(number)
+    dot_index=a.find('.')
+    mant=a[dot_index+1:]
+    if len(mant) < ndigits:
+        return number
+    end_mant=int(mant[ndigits])
+    start_mant=int(mant[:ndigits])
+    if end_mant >= 5:
+        start_mant+=1
+    return float(f'{int(number)}.{start_mant}')
 
 print(my_round(2.1234567, 5))
 print(my_round(2.1999967, 5))
