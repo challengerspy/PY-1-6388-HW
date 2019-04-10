@@ -30,8 +30,28 @@ print(my_round(2.9999967, 5))
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
+def to_digit(input):
+    a=input
+    while a > 0:
+        yield a % 10
+        a //= 10
+    
 def lucky_ticket(ticket_number):
-    pass
+    if 100000 < ticket_number <= 1000000:
+        left= ticket_number % 1000
+        right= ticket_number // 1000
+        if (sum(to_digit(left))) == (sum(to_digit(right))):
+            return True
+        else:
+            return False
+    raise Exception('bad number')
+    
+print(lucky_ticket(123006))
+try:
+    print(lucky_ticket(12321))
+except Exception as exc: 
+    print(exc)
+print(lucky_ticket(436751))
 
 
 print(lucky_ticket(123006))
