@@ -1,6 +1,3 @@
-__author__ = 'Гращенко Игорь Васильевич'
-
-
 # Задача-1: Дано произвольное целое число, вывести самую большую цифру этого числа.
 # Например, дается x = 58375.
 # Нужно вывести максимальную цифру в данном числе, т.е. 8.
@@ -10,15 +7,25 @@ __author__ = 'Гращенко Игорь Васильевич'
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
 
-x=input('Введите число:  ')
-y=str(x)
-i=0
-max=0
-while i < len(x):
-    if int(y[i]) > max:
-        max=int(y[i])
-    i=i+1
-print('Максимальная цифра в числе= ',max)
+number = input("Type number: ")
+
+# 01-1
+length = len(number)
+counter = 0
+maximum = 0
+
+while counter < length:
+    new_value = int(number[counter])
+
+    if new_value > maximum:
+        maximum = new_value
+
+    counter += 1
+
+print(maximum)
+
+# 01-2 (not exactly)
+maximum = max(number)  # <class 'str'> ENCODING SEARCH
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
 # Поменять значения переменных местами. Вывести новые значения на экран.
@@ -27,15 +34,11 @@ print('Максимальная цифра в числе= ',max)
 # * постарайтесь сделать решение через действия над числами;
 # * при желании и понимании воспользуйтесь синтаксисом кортежей Python.
 
-a=input('Введите число a: ')
-b=input('Введите число b: ')
-print(a)
-print(b)
+# 02-1
+a = int(input("First number: "))
+b = int(input("Second number: "))
 
-a,b=b,a
-
-print('Число а = ', a)
-print('Число b = ', b)
+a, b = b, a
 
 # Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
 # ax² + bx + c = 0.
@@ -44,19 +47,27 @@ print('Число b = ', b)
 # import math
 # math.sqrt(4) - вычисляет корень числа 4
 
+# 03-1
 import math
-print('Введите коэффициенты для уравнения: ax*x + bx + c = 0')
-a=int(input('Введите а: '))
-b=int(input('Введите b: '))
-c=int(input('Введите c: '))
-d=b*b-4*a*c
-if d<0:
-    print('Нет решения')
-if d==0:
-    x=2*a-b
-    print('D = 0, x=', x)
-if d>= 0:
-    x1 = (-b + math.sqrt(b * b - 4 * a * c)) / 2 * a
-    x2 = (-b - math.sqrt(b * b - 4 * a * c)) / 2 * a
-    print('x1 = ', x1)
-    print('x2 = ', x2)
+
+# 5x^2 + 10x + 4 = 0
+a = 5
+b = 10
+c = 4
+# b^2 - 4ac
+D = b ** 2 - (4 * a * c)
+print("D =", D)
+D_sqrt = math.sqrt(D)
+
+x1 = 0
+x2 = 0
+
+if D == 0:
+    x1 = (-b / 2 * a)
+    print("X =", x1)
+elif D < 0:
+    print("no solution")
+else:
+    x1 = (-b + D_sqrt) / 2 * a
+    x2 = (-b - D_sqrt) / 2 * a
+    print("X1 =", x1, ", X2 =", x2)
