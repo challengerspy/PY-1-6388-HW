@@ -6,6 +6,15 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 
+import random
+
+list_g = [random.randint(-10, 10) for _ in range(10)]
+print('list_g = ', list_g)
+list_new=[]
+for x in list_g:
+    list_new.append(x*x)
+print(list_new)
+
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
@@ -16,3 +25,13 @@
 # + Элемент кратен 3
 # + Элемент положительный
 # + Элемент не кратен 4
+
+import random
+
+list_g = [random.randint(-1000, 1000) for _ in range(300)]
+print('list_g = ', list_g)
+list_new=[]
+for x in list_g:
+    if x % 3 == 0 and x > 0 and x % 4 != 0:
+        list_new.append(x)
+print(list_new)
